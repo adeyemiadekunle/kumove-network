@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { SiteFrame } from '@/components/site/SiteFrame';
 import {
   ArrowRight,
@@ -27,13 +28,15 @@ export default function BusinessPage() {
               Talk to the business team <ArrowRight size={16} />
             </a>
           </div>
-          <div className="opportunity-panel audience-panel">
-            <span className="panel-tag">For businesses</span>
+          <div className="audience-panel">
+            <div className="image-panel"><Image src="/images/kumove-hero.png" alt="Local shop owner receiving a KuMove parcel" fill sizes="(max-width: 699px) 100vw, 38vw" /><div className="image-panel-overlay"><strong>Keep the promise after “buy now”.</strong><span>One clear route from checkout to doorstep.</span></div></div>
+            <div className="opportunity-panel"><span className="panel-tag">For businesses</span>
             <h2>Keep the promise after "buy now".</h2>
             <div className="panel-rows">
               <div className="panel-row"><span>Delivery options</span><strong>same / next day</strong></div>
               <div className="panel-row"><span>Customer updates</span><strong>branded + useful</strong></div>
               <div className="panel-row"><span>Operational view</span><strong>one shared route</strong></div>
+            </div>
             </div>
           </div>
         </div>

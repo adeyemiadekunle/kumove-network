@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { SiteFrame } from '@/components/site/SiteFrame';
 import {
   ArrowRight,
@@ -27,13 +28,15 @@ export default function DriversPage() {
               Join KuDriver <ArrowRight size={16} />
             </a>
           </div>
-          <div className="opportunity-panel audience-panel">
-            <span className="panel-tag">KuDriver capacity</span>
+          <div className="audience-panel">
+            <div className="image-panel"><Image src="/images/kumove-driver.png" alt="KuDriver standing beside a delivery van" fill sizes="(max-width: 699px) 100vw, 38vw" /><div className="image-panel-overlay"><strong>Make every mile count.</strong><span>Better planning for the people behind the wheel.</span></div></div>
+            <div className="opportunity-panel"><span className="panel-tag">KuDriver capacity</span>
             <h2>Make the city work smarter, mile by mile.</h2>
             <div className="panel-rows">
               <div className="panel-row"><span>Consolidated drops</span><strong>fewer detours</strong></div>
               <div className="panel-row"><span>Loading guidance</span><strong>live bay info</strong></div>
               <div className="panel-row"><span>Proof at the door</span><strong>every time</strong></div>
+            </div>
             </div>
           </div>
         </div>
