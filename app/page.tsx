@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDownRight, ArrowRight, MapPin, PackageCheck, Route as RouteIcon, ShieldCheck, Store } from 'lucide-react';
 import { SiteFrame } from '@/components/site/SiteFrame';
@@ -11,9 +10,14 @@ export const metadata: Metadata = {
 
 function NetworkVisual() {
   return (
-    <div className="network-visual" aria-label="KuMove courier handing a parcel to a neighborhood shop owner">
-      <Image src="/images/kumove-hero.png" alt="KuMove courier handing a parcel to a local shop owner" fill priority sizes="(max-width: 699px) 100vw, 42vw" className="network-image" />
-      <div className="network-overlay" />
+    <div className="network-visual" role="img" aria-label="Animated KuMove city map showing a delivery moving between local network stops">
+      <div className="city-map" aria-hidden="true">
+        <span className="map-block block-a" /><span className="map-block block-b" /><span className="map-block block-c" /><span className="map-block block-d" /><span className="map-block block-e" /><span className="map-block block-f" />
+        <span className="map-street street-a" /><span className="map-street street-b" /><span className="map-street street-c" /><span className="map-street street-d" /><span className="map-street street-e" />
+        <span className="map-line one" /><span className="map-line two" /><span className="map-line three" /><span className="map-line four" />
+        <span className="map-stop stop-a" /><span className="map-stop stop-b" /><span className="map-stop stop-c" /><span className="map-stop stop-d" />
+        <span className="moving-dot" /><PackageCheck className="moving-package" size={18} />
+      </div>
       <span className="network-label">Live city network / 04</span>
       <div className="network-card"><small>Route health</small><strong>Moving well</strong><span>+ 12.4% this week</span></div>
     </div>
