@@ -110,18 +110,18 @@ function AudiencePage({
 function RetailersPage() {
   return (
     <AudiencePage
-      eyebrow="Kumove for retailers"
+      eyebrow="Kumove for business"
       title={<>Your checkout,<br /><em>with a local edge.</em></>}
-      description="Give customers delivery and collection choices that feel as thoughtful as the products they came for. Kumove handles the moving parts from dispatch to doorstep."
-      actionLabel="Start a partnership"
-      actionHref="mailto:hello@kumove.city?subject=Retailer%20partnership"
+      description="Give customers delivery and collection choices that feel as thoughtful as the products they came for. Kumove handles the moving parts from dispatch to doorstep for retailers, brands and marketplaces."
+      actionLabel="Talk to the business team"
+      actionHref="mailto:hello@kumove.city?subject=Business%20partnership"
       accent="teal"
-      panelTag="Retail + commerce"
+      panelTag="For businesses"
       panelTitle="Keep the promise after “buy now”."
       rows={[['Delivery options', 'same / next day'], ['Customer updates', 'branded + useful'], ['Operational view', 'one shared route']]}
-      sectionLabel="01 / Merchant movement"
+      sectionLabel="01 / Business movement"
       sectionTitle="Less chasing. More sending."
-      sectionCopy="Kumove gives merchant teams a clean operating layer for bulk shipments, tracking, returns and the decisions that keep customers close."
+      sectionCopy="Kumove gives business teams a clean operating layer for bulk shipments, tracking, returns and the decisions that keep customers close."
       benefits={[
         { icon: <Store size={22} />, copy: 'Offer delivery, collection and returns from one connected network.' },
         { icon: <PackageCheck size={22} />, copy: 'Keep every shipment visible across hubs, pitstops, drivers and couriers.' },
@@ -134,16 +134,16 @@ function RetailersPage() {
 function CouriersPage() {
   return (
     <AudiencePage
-      eyebrow="Kumove for couriers"
+      eyebrow="KuCourier"
       title={<>Earn on your terms.<br /><em>Move with purpose.</em></>}
       description="See the route, the pay and the distance before you accept. Kumove gives independent couriers the visibility and support to turn city time into dependable income."
-      actionLabel="I want to move"
-      actionHref="mailto:hello@kumove.city?subject=Courier%20interest"
+      actionLabel="Join KuCourier"
+      actionHref="mailto:hello@kumove.city?subject=KuCourier%20interest"
       accent="lime"
       panelTag="A route that respects you"
       panelTitle="More clarity at every corner."
       rows={[['Route visibility', 'before accept'], ['Typical window', '2–4 hours'], ['Support response', 'under 4 min']]}
-      sectionLabel="01 / Courier movement"
+      sectionLabel="01 / KuCourier movement"
       sectionTitle="Good work starts with good information."
       sectionCopy="Your time matters. Every courier assignment is shaped by location, capacity, route compatibility and the shipment details you need to do a good job."
       benefits={[
@@ -158,16 +158,16 @@ function CouriersPage() {
 function DriversPage() {
   return (
     <AudiencePage
-      eyebrow="Kumove for drivers"
+      eyebrow="KuDriver"
       title={<>A full van is not<br /><em>a full day.</em></>}
       description="Put good planning behind every shift. Kumove builds denser, cleaner routes for owner-drivers who know the best delivery is the one that does not need to be repeated."
-      actionLabel="Talk to the fleet team"
-      actionHref="mailto:hello@kumove.city?subject=Driver%20interest"
+      actionLabel="Join KuDriver"
+      actionHref="mailto:hello@kumove.city?subject=KuDriver%20interest"
       accent="ink"
-      panelTag="For van drivers"
+      panelTag="KuDriver capacity"
       panelTitle="Make the city work smarter, mile by mile."
       rows={[['Consolidated drops', 'fewer detours'], ['Loading guidance', 'live bay info'], ['Proof at the door', 'every time']]}
-      sectionLabel="01 / Driver capacity"
+      sectionLabel="01 / KuDriver capacity"
       sectionTitle="The route is your working capital."
       sectionCopy="Kunemi matches available capacity to the shipments, nodes and corridors that make operational sense — so your vehicle works harder without the day becoming chaotic."
       benefits={[
@@ -182,16 +182,16 @@ function DriversPage() {
 function PitstopsPage() {
   return (
     <AudiencePage
-      eyebrow="Kumove pitstops"
+      eyebrow="KuStops"
       title={<>The corner shop,<br /><em>with a new role.</em></>}
       description="Become the friendly face between a parcel and its front door. Pitstops make delivery more flexible for neighbors and bring useful footfall to the places that give a street its character."
-      actionLabel="Become a pitstop"
-      actionHref="mailto:hello@kumove.city?subject=Pitstop%20interest"
+      actionLabel="Become a KuStop"
+      actionHref="mailto:hello@kumove.city?subject=KuStops%20interest"
       accent="teal"
-      panelTag="The neighborhood layer"
+      panelTag="The KuStops layer"
       panelTitle="A trusted place to collect."
       rows={[['Customer handoff', 'simple + clear'], ['Network role', 'local node'], ['Parcel visibility', 'scan to scan']]}
-      sectionLabel="01 / PUDO network"
+      sectionLabel="01 / KuStops network"
       sectionTitle="Your space can make the whole route better."
       sectionCopy="PUDO points connect the postcode layer to real places. Kumove gives your team simple tools for check-in, storage, notification and secure collection."
       benefits={[

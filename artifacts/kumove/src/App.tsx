@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
-import { AboutPage, HomePage, TrackPage } from '@/pages/primary-pages';
+import { AboutPage, CustomersPage, HomePage, TrackPage } from '@/pages/primary-pages';
 import {
   CouriersPage,
   DriversPage,
@@ -20,10 +20,12 @@ function Router() {
     <RoutedErrorBoundary>
       <Switch>
         <Route path="/" component={HomePage} />
+        <Route path="/business" component={RetailersPage} />
         <Route path="/retailers" component={RetailersPage} />
         <Route path="/couriers" component={CouriersPage} />
         <Route path="/drivers" component={DriversPage} />
         <Route path="/pitstops" component={PitstopsPage} />
+        <Route path="/customers" component={CustomersPage} />
         <Route path="/track" component={TrackPage} />
         <Route path="/about" component={AboutPage} />
         <Route component={NotFound} />

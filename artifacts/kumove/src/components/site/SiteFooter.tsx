@@ -18,10 +18,11 @@ export function SiteFooter() {
           <div>
             <h4>Explore</h4>
             <div className="footer-links">
-              <Link href="/retailers" data-testid="link-footer-retailers">For retailers</Link>
-              <Link href="/couriers" data-testid="link-footer-couriers">For couriers</Link>
-              <Link href="/drivers" data-testid="link-footer-drivers">For drivers</Link>
-              <Link href="/pitstops" data-testid="link-footer-pitstops">For pitstops</Link>
+              <Link href="/business" data-testid="link-footer-business">For business</Link>
+              <Link href="/drivers" data-testid="link-footer-drivers">KuDriver</Link>
+              <Link href="/couriers" data-testid="link-footer-couriers">KuCourier</Link>
+              <Link href="/pitstops" data-testid="link-footer-pitstops">KuStops</Link>
+              <Link href="/customers" data-testid="link-footer-customers">For customers</Link>
             </div>
           </div>
           <div>

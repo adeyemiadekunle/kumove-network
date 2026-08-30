@@ -86,7 +86,7 @@ function HomePage() {
   return (
     <SiteFrame
       title="Urban delivery, redrawn"
-      description="Kumove connects retailers, couriers, drivers and local collection points into a smarter city delivery network."
+      description="Kumove connects businesses, customers, KuCouriers, KuDrivers and KuStops into a smarter city delivery network."
     >
       <section className="hero" aria-labelledby="home-heading">
         <div className="container-wide hero-grid">
@@ -99,11 +99,11 @@ function HomePage() {
             </h1>
             <p className="hero-copy reveal delay-2">
               Kumove is the delivery network that makes online orders feel local — pairing brilliant
-              retailers with trusted people, smarter routes and the places you already know.
+               businesses with trusted people, smarter routes and the places you already know.
             </p>
             <div className="hero-actions reveal delay-3">
-              <Link className="button-primary" href="/retailers" data-testid="button-partner-with-kumove">
-                Partner with Kumove <ArrowDownRight size={16} />
+              <Link className="button-primary" href="/business" data-testid="button-partner-with-kumove">
+                For business <ArrowDownRight size={16} />
               </Link>
               <Link className="button-quiet" href="/about" data-testid="button-see-the-route">
                 See the route
@@ -131,7 +131,7 @@ function HomePage() {
           <div className="network-story">
             <div className="story-quote">“Fast is good. Useful is better.”</div>
             <p className="story-aside">
-              A retailer, a courier, a van driver and a neighborhood pitstop each see a different part of
+               A business, a KuCourier, a KuDriver and a KuStop each see a different part of
               the route. Kumove brings them into focus, so every handoff feels simple, visible and worth making.
             </p>
           </div>
@@ -154,10 +154,10 @@ function HomePage() {
             </p>
           </div>
           <div className="service-grid">
-            <Link className="service-card featured" href="/retailers">
+            <Link className="service-card featured" href="/business">
               <div>
                 <span className="service-icon"><Store size={20} /></span>
-                <div className="service-kicker">For retailers</div>
+                <div className="service-kicker">Kumove for business</div>
                 <h3>Turn checkout into a local advantage.</h3>
                 <p>Give customers delivery and collection choices that fit the way they actually live.</p>
               </div>
@@ -166,7 +166,7 @@ function HomePage() {
             <Link className="service-card" href="/couriers">
               <div>
                 <span className="service-icon"><PackageCheck size={20} /></span>
-                <div className="service-kicker">For couriers</div>
+                <div className="service-kicker">KuCourier</div>
                 <h3>Earn with a clearer route.</h3>
                 <p>See the work before you accept it and keep control of your time.</p>
               </div>
@@ -175,7 +175,7 @@ function HomePage() {
             <Link className="service-card" href="/drivers">
               <div>
                 <span className="service-icon"><RouteIcon size={20} /></span>
-                <div className="service-kicker">For drivers</div>
+                <div className="service-kicker">KuDriver</div>
                 <h3>Make every mile count.</h3>
                 <p>Move consolidated capacity between the nodes that keep the city moving.</p>
               </div>
@@ -184,7 +184,7 @@ function HomePage() {
             <Link className="service-card" href="/pitstops">
               <div>
                 <span className="service-icon"><MapPin size={20} /></span>
-                <div className="service-kicker">For pitstops</div>
+                <div className="service-kicker">KuStops</div>
                 <h3>Put your corner of the city to work.</h3>
                 <p>Become a trusted collection point for the people already passing by.</p>
               </div>
@@ -199,6 +199,71 @@ function HomePage() {
               </div>
               <span className="service-arrow"><ArrowRight size={17} /></span>
             </Link>
+          </div>
+        </div>
+      </section>
+    </SiteFrame>
+  );
+}
+
+function CustomersPage() {
+  return (
+    <SiteFrame
+      title="Delivery that fits your day"
+      description="Choose delivery, collection and useful updates through Kumove."
+    >
+      <section className="page-hero audience-hero audience-teal" aria-labelledby="customers-heading">
+        <div className="container-wide audience-hero-grid">
+          <div>
+            <span className="eyebrow">For customers</span>
+            <h1 id="customers-heading" className="page-title">Delivery that fits<br /><em>your day.</em></h1>
+            <p className="page-copy">
+              Get the parcel without giving up the whole day. Kumove lets you follow the route, choose a trusted
+              collection point and see what is happening next.
+            </p>
+            <div className="hero-actions">
+              <Link className="button-primary" href="/track" data-testid="button-customer-track">
+                Track a delivery <ArrowRight size={16} />
+              </Link>
+              <Link className="button-quiet" href="/pitstops" data-testid="button-customer-stops">
+                See KuStops
+              </Link>
+            </div>
+          </div>
+          <div className="opportunity-panel audience-panel">
+            <span className="panel-tag">Your delivery, your choice</span>
+            <h2>Not home? No problem.</h2>
+            <div className="panel-rows">
+              <div className="panel-row"><span>Door delivery</span><strong>clear windows</strong></div>
+              <div className="panel-row"><span>KuStops collection</span><strong>nearby + flexible</strong></div>
+              <div className="panel-row"><span>Route updates</span><strong>useful, not noisy</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section" aria-labelledby="customer-options-heading">
+        <div className="container-wide">
+          <div className="section-heading">
+            <span className="section-index">01 / Your options</span>
+            <h2 id="customer-options-heading">A delivery experience that gives time back.</h2>
+            <p>Whether you are waiting at home, collecting around the corner or checking in between meetings, Kumove keeps the useful part close.</p>
+          </div>
+          <div className="benefit-grid">
+            <article className="benefit-card">
+              <span className="benefit-card-icon"><PackageCheck size={22} /></span>
+              <span className="benefit-card-number">01</span>
+              <p>See the latest handoff, not just a vague “on the way”.</p>
+            </article>
+            <article className="benefit-card">
+              <span className="benefit-card-icon"><MapPin size={22} /></span>
+              <span className="benefit-card-number">02</span>
+              <p>Choose a KuStop when a local collection point suits you better.</p>
+            </article>
+            <article className="benefit-card">
+              <span className="benefit-card-icon"><Clock3 size={22} /></span>
+              <span className="benefit-card-number">03</span>
+              <p>Get updates that help you plan, with fewer missed-door attempts.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -308,7 +373,7 @@ function TrackPage() {
             <h2 className="section-title">The route is more than a blue dot.</h2>
           </div>
           <p className="page-copy">
-            Kunemi keeps a time-stamped event trail across addresses, hubs, pitstops, drivers and couriers.
+            Kunemi keeps a time-stamped event trail across addresses, hubs, KuStops, KuDrivers and KuCouriers.
             That gives customers a useful update, not just a map that says “somewhere on the way”.
           </p>
         </div>
@@ -374,7 +439,7 @@ function AboutPage() {
               <h2 className="page-title page-title-light">Address.<br />Sort.<br /><em>Move.</em></h2>
             </div>
             <div className="architecture-flow">
-              {['Postcode', 'Sorting engine', 'Hub / pitstop', 'Courier / driver', 'Delivery evidence'].map((item, index) => (
+              {['Postcode', 'Sorting engine', 'KuStops', 'KuCourier / KuDriver', 'Delivery evidence'].map((item, index) => (
                 <div className="architecture-step" key={item}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{item}</strong>
@@ -414,4 +479,4 @@ function AboutPage() {
   );
 }
 
-export { HomePage, TrackPage, AboutPage };
+export { HomePage, CustomersPage, TrackPage, AboutPage };

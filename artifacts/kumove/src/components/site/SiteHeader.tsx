@@ -4,9 +4,10 @@ import { Link, useLocation } from 'wouter';
 import { BrandMark } from './BrandMark';
 
 const navItems = [
-  { href: '/retailers', label: 'For retailers' },
-  { href: '/couriers', label: 'For couriers' },
-  { href: '/pitstops', label: 'Pitstops' },
+  { href: '/business', label: 'For business' },
+  { href: '/drivers', label: 'KuDriver' },
+  { href: '/pitstops', label: 'KuStops' },
+  { href: '/customers', label: 'For customers' },
   { href: '/about', label: 'Our route' },
 ];
 
@@ -66,10 +67,6 @@ export function SiteHeader() {
               <ChevronRight size={17} />
             </Link>
           ))}
-          <Link href="/drivers" onClick={() => setMenuOpen(false)} data-testid="link-mobile-drivers">
-            For drivers
-            <ChevronRight size={17} />
-          </Link>
           <Link href="/track" onClick={() => setMenuOpen(false)} data-testid="link-mobile-track">
             Track an order
             <MoveUpRight size={17} />
