@@ -76,5 +76,5 @@ export function LagosDeliveryMap() {
     };
   }, []);
 
-  return <div className="network-visual lagos-map" aria-label="Live Mapbox map of Lagos showing an animated KuMove delivery route"><div ref={containerRef} className="lagos-map-canvas" /><div className="network-label">Lagos network / live route</div><div className="network-card"><small>Route health</small><strong>Moving well</strong><span>Pickup → doorstep</span></div></div>;
+  return <div className="lagos-map" aria-label="Live Mapbox map of Lagos showing an animated KuMove delivery route"><div ref={containerRef} className="lagos-map-canvas" /></div>;
 }
