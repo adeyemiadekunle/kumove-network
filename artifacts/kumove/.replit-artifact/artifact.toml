@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Kumove"
+description = "A responsive Kumove delivery-network marketing site inspired by the attached logistics reference pages, with clear paths for retailers, couriers, drivers, pitstops, and order tracking."
+version = "1.0.0"
+id = "artifacts/kumove"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22007
+
+[services.development]
+run = "pnpm --filter @workspace/kumove run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kumove", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kumove/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22007"
+BASE_PATH = "/"
