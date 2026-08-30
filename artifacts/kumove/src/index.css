@@ -250,7 +250,7 @@
 .audience-teal { background: hsl(var(--secondary) / .12); }
 .audience-lime { background: hsl(var(--accent) / .22); }
 .audience-ink { background: hsl(var(--muted)); }
-.page-title { max-width: 760px; margin: 18px 0 23px; font: 800 clamp(49px, 8vw, 105px)/.91 var(--app-font-serif); letter-spacing: -.08em; }
+.page-title { max-width: 760px; margin: 18px 0 23px; font: 800 clamp(49px, 8vw, 105px)/.91 var(--app-font-serif); letter-spacing: -.08em; overflow-wrap: break-word; }
 .page-title em { color: hsl(var(--secondary)); font-style: normal; }
 .page-title-light em { color: hsl(var(--accent)); }
 .page-copy { max-width: 520px; color: hsl(var(--muted-foreground)); font-size: 17px; line-height: 1.65; }
@@ -283,6 +283,8 @@
 .faq-wrap-wide { max-width: 940px; margin: 0; }
 .icon-glyph { display: inline-grid; place-items: center; width: 22px; height: 22px; color: hsl(var(--secondary)); font-size: 25px; line-height: 1; }
 .footer-note { color: hsl(var(--primary-foreground) / .48); font-size: 12px; }
+.track-section .page-title { max-width: 100%; }
+.track-grid > * { min-width: 0; }
 
 .about-layout { display: grid; gap: 28px; align-items: stretch; }
 .about-lede { font: 800 clamp(36px, 5.5vw, 70px)/.96 var(--app-font-serif); letter-spacing: -.07em; }
@@ -335,6 +337,10 @@
   .feature-band, .cta-band { grid-template-columns: 1fr .8fr; gap: 90px; }
   .benefit-grid { grid-template-columns: repeat(3, 1fr); }
   .principle-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 699px) {
+  .track-section .page-title { max-width: 100%; font-size: clamp(38px, 11vw, 68px); word-break: break-word; }
+  .track-section .page-title em { white-space: nowrap; }
 }
 @media (min-width: 1020px) {
   .container-wide { width: min(100% - 80px, 1240px); }

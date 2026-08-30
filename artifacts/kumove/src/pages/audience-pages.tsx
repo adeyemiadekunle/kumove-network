@@ -30,6 +30,14 @@ type AudiencePageProps = {
   sectionCopy: string;
 };
 
+function ActionLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const className = "button-primary";
+  if (href.startsWith('mailto:')) {
+    return <a className={className} href={href}>{children}</a>;
+  }
+  return <Link className={className} href={href}>{children}</Link>;
+}
+
 function AudiencePage({
   eyebrow,
   title,
@@ -53,9 +61,9 @@ function AudiencePage({
             <span className="eyebrow">{eyebrow}</span>
             <h1 id="audience-heading" className="page-title">{title}</h1>
             <p className="page-copy">{description}</p>
-            <Link className="button-primary" href={actionHref} data-testid={`button-${accent}-primary`}>
+            <ActionLink href={actionHref}>
               {actionLabel} <ArrowRight size={16} />
-            </Link>
+            </ActionLink>
           </div>
           <div className="opportunity-panel audience-panel">
             <span className="panel-tag">{panelTag}</span>

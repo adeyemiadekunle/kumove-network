@@ -232,7 +232,11 @@ function TrackPage() {
         <div className="container-wide track-grid">
           <div className="route-status">
             <span className="section-index">01 / Track a delivery</span>
-            <h1 id="track-heading" className="page-title page-title-light">No mystery.<br />Just movement.</h1>
+            <h1 id="track-heading" className="page-title page-title-light">
+              No mystery.
+              <br />
+              Just <em>movement.</em>
+            </h1>
             <p className="page-copy page-copy-light">
               A Kumove update tells you what happened, what is happening and what comes next. Put your feet up
               — we will bring the useful details.
