@@ -158,7 +158,9 @@
 .street-c { left: 27%; top: 4%; width: 88%; transform: rotate(73deg); } .street-d { left: 8%; top: 86%; width: 82%; transform: rotate(-54deg); } .street-e { left: 52%; top: 6%; width: 76%; transform: rotate(112deg); }
 .moving-package { position: absolute; z-index: 4; color: hsl(var(--secondary)); filter: drop-shadow(0 0 8px hsl(var(--secondary) / .55)); animation: package-travel 6s ease-in-out infinite; }
 .lagos-map { background: hsl(var(--primary)); }
-.lagos-map-canvas { position: absolute; inset: 0; }
+.lagos-map::before, .lagos-map::after { display: none; }
+.lagos-map-canvas { position: absolute; inset: 0; z-index: 0; width: 100%; height: 465px; }
+.lagos-map-canvas .mapboxgl-map, .lagos-map-canvas .mapboxgl-canvas-container { width: 100%; height: 100%; }
 .lagos-map-canvas .mapboxgl-canvas { outline: none; }
 .lagos-map .mapboxgl-ctrl-attrib { display: none; }
 .lagos-map-stop { display: block; width: 11px; height: 11px; border: 2px solid hsl(var(--primary-foreground)); border-radius: 50%; background: hsl(var(--secondary)); box-shadow: 0 0 0 5px hsl(var(--secondary) / .18); }
@@ -358,6 +360,7 @@
   .principle-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 699px) {
+  .lagos-map-canvas { height: 360px; }
   .track-section .page-title { max-width: 100%; font-size: clamp(38px, 11vw, 68px); word-break: break-word; }
   .track-section .page-title em { white-space: nowrap; }
 }

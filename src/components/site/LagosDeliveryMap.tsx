@@ -23,6 +23,8 @@ export function LagosDeliveryMap() {
     if (!token) return;
 
     mapboxgl.accessToken = token;
+    const resizeObserver = new ResizeObserver(() => mapRef.current?.resize());
+    resizeObserver.observe(containerRef.current);
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: 'mapbox://styles/mapbox/dark-v11',
@@ -34,6 +36,7 @@ export function LagosDeliveryMap() {
     mapRef.current = map;
 
     map.on('load', () => {
+      map.resize();
       map.addSource('kumove-route', {
         type: 'geojson',
         data: { type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: lagosRoute } },
@@ -66,6 +69,7 @@ export function LagosDeliveryMap() {
     });
 
     return () => {
+      resizeObserver.disconnect();
       markerRef.current?.remove();
       map.remove();
       mapRef.current = null;
