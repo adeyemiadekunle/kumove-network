@@ -8,8 +8,9 @@ import { BrandMark } from './BrandMark';
 
 const navItems = [
   { href: '/business', label: 'For business' },
-  { href: '/drivers', label: 'KuDriver' },
-  { href: '/pitstops', label: 'KuStops' },
+  { href: '/couriers', label: 'KuCourier' },
+  { href: '/kudrivers', label: 'KuDriver' },
+  { href: '/kustops', label: 'KuStops' },
   { href: '/customers', label: 'For customers' },
   { href: '/about', label: 'Our route' },
 ];

@@ -19,9 +19,9 @@ export function SiteFooter() {
             <h4>Explore</h4>
             <div className="footer-links">
               <Link href="/business" data-testid="link-footer-business">For business</Link>
-              <Link href="/drivers" data-testid="link-footer-drivers">KuDriver</Link>
+              <Link href="/kudrivers" data-testid="link-footer-kudrivers">KuDriver</Link>
               <Link href="/couriers" data-testid="link-footer-couriers">KuCourier</Link>
-              <Link href="/pitstops" data-testid="link-footer-pitstops">KuStops</Link>
+              <Link href="/kustops" data-testid="link-footer-kustops">KuStops</Link>
               <Link href="/customers" data-testid="link-footer-customers">For customers</Link>
             </div>
           </div>
@@ -36,8 +36,9 @@ export function SiteFooter() {
           <div>
             <h4>Start a conversation</h4>
             <div className="footer-links">
-              <a href="mailto:hello@kumove.city" data-testid="link-footer-email">
-                hello@kumove.city <ArrowRight size={13} style={{ verticalAlign: 'middle' }} />
+              <a className="footer-email" href="mailto:hello@kumove.city" data-testid="link-footer-email">
+                <span>hello@kumove.city</span>
+                <ArrowRight size={13} aria-hidden="true" />
               </a>
               <span className="footer-note">A little movement goes a long way.</span>
             </div>
