@@ -46,8 +46,8 @@ export default function BusinessPage() {
             <h2>Less chasing. More sending.</h2>
             <p>Kumove gives business teams a clean operating layer for bulk shipments, tracking, returns and the decisions that keep customers close.</p>
           </div>
-          <div className="relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
-            <Image src="/images/merchant-order.png" alt="Business owner preparing a parcel for delivery" fill sizes="(max-width: 768px) 100vw, 1200px" className="object-cover" />
+          <div className="audience-feature-image relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
+            <Image src="/images/merchant-order-africa.png" alt="African business owner preparing a parcel for delivery" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">
             <article className="benefit-card">

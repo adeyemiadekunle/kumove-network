@@ -46,8 +46,8 @@ export default function CouriersPage() {
             <h2>Good work starts with good information.</h2>
             <p>Your time matters. Every courier assignment is shaped by location, capacity, route compatibility and the shipment details you need to do a good job.</p>
           </div>
-          <div className="relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
-            <Image src="/images/courier-pickup.png" alt="Courier receiving a parcel from a local shop" fill sizes="(max-width: 768px) 100vw, 1200px" className="object-cover" />
+          <div className="audience-feature-image relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
+            <Image src="/images/courier-pickup-africa.png" alt="African courier receiving a parcel from a local shop" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">
             <article className="benefit-card">

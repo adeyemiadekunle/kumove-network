@@ -263,6 +263,15 @@
 .support-line { display: flex; gap: 8px; align-items: center; margin-top: 20px; color: hsl(var(--muted-foreground)); font-size: 11px; }
 .support-line a { color: hsl(var(--foreground)); font-weight: 700; }
 .form-label { display: block; margin-bottom: 8px; color: hsl(var(--muted-foreground)); font: 10px var(--app-font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.audience-feature-image {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  background: hsl(var(--muted));
+}
+.audience-feature-image img {
+  display: block;
+}
 .benefit-grid { display: grid; gap: 18px; }
 .benefit-card { min-height: 220px; position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 23px; border: 1px solid hsl(var(--border)); border-radius: 22px; background: hsl(var(--card)); transition: border-color .25s ease, transform .25s ease; }
 .benefit-card:hover { border-color: hsl(var(--secondary)); transform: translateY(-4px); }
