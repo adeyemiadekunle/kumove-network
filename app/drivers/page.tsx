@@ -46,7 +46,7 @@ export default function DriversPage() {
             <h2>The route is your working capital.</h2>
             <p>Kunemi matches available capacity to the shipments, nodes and corridors that make operational sense — so your vehicle works harder without the day becoming chaotic.</p>
           </div>
-          <div className="audience-feature-image relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
+          <div className="audience-feature-image relative mb-10 aspect-[4/3] overflow-hidden rounded-[2rem] md:aspect-[16/7]">
             <Image src="/images/driver-loading-africa.png" alt="African driver loading parcels into a delivery van" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">

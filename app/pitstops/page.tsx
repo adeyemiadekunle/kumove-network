@@ -49,7 +49,7 @@ export default function PitstopsPage() {
             <h2>Your space can make the whole route better.</h2>
             <p>PUDO points connect the postcode layer to real places. Kumove gives your team simple tools for check-in, storage, notification and secure collection.</p>
           </div>
-          <div className="audience-feature-image relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
+          <div className="audience-feature-image relative mb-10 aspect-[4/3] overflow-hidden rounded-[2rem] md:aspect-[16/7]">
             <Image src="/images/local-pickup-africa.png" alt="African shopkeeper handing a parcel to a customer at a KuStop" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">
