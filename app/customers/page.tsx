@@ -7,6 +7,7 @@ import {
   PackageCheck,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Delivery that fits your day',
@@ -51,6 +52,9 @@ export default function CustomersPage() {
             <span className="section-index">01 / Your options</span>
             <h2 id="customer-options-heading">A delivery experience that gives time back.</h2>
             <p>Whether you are waiting at home, collecting around the corner or checking in between meetings, Kumove keeps the useful part close.</p>
+          </div>
+          <div className="relative mb-10 aspect-[16/7] overflow-hidden rounded-[2rem]">
+            <Image src="/images/customer-delivery.png" alt="Customer receiving a parcel from a courier" fill sizes="(max-width: 768px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">
             <article className="benefit-card">
