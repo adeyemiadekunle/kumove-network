@@ -294,7 +294,8 @@
 .page-copy-light { color: hsl(var(--primary-foreground) / .65); }
 .audience-hero .button-primary { margin-top: 24px; width: fit-content; }
 .audience-panel { max-width: 500px; width: 100%; justify-self: end; }
-.feature-band, .cta-band, .architecture-band { display: grid; gap: 35px; align-items: center; }
+.feature-band, .cta-band { display: grid; gap: 35px; align-items: center; }
+.architecture-band { display: flex; flex-direction: column; gap: 35px; align-items: stretch; }
 .section-title { margin: 12px 0 18px; font: 800 clamp(32px, 4.5vw, 58px)/.98 var(--app-font-serif); letter-spacing: -.05em; }
 .status-timeline { margin-top: 38px; }
 .support-line { display: flex; gap: 8px; align-items: center; margin-top: 20px; color: hsl(var(--muted-foreground)); font-size: 11px; }
@@ -389,6 +390,7 @@
   .page-hero { padding-top: 124px; padding-bottom: 56px; }
   .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(340px, .82fr); gap: 48px; align-items: center; }
   .page-hero-grid, .audience-hero-grid { grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+  .section-tinted .page-hero-grid { grid-template-columns: 1.08fr .92fr; }
   .stat-band { grid-template-columns: repeat(4, 1fr); gap: 32px; }
   .section-heading { grid-template-columns: 1.1fr .75fr; align-items: end; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
@@ -402,6 +404,7 @@
   .footer-grid { grid-template-columns: 1.7fr 1fr 1fr 1fr; }
   .footer-bottom { flex-direction: row; justify-content: space-between; }
   .feature-band, .cta-band { grid-template-columns: 1fr .8fr; gap: 64px; }
+  .architecture-band { display: grid; align-items: center; }
   .benefit-grid { grid-template-columns: repeat(3, 1fr); }
   .principle-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -412,7 +415,7 @@
 @media (min-width: 1024px) {
   .hero-grid { position: relative; display: block; min-height: 570px; }
   .hero-grid > div:first-child { position: relative; z-index: 2; width: 56%; padding-top: 88px; }
-  .hero-grid > div:first-child::before { content: ''; position: absolute; z-index: -1; inset: -80px -220px -80px -80px; background: linear-gradient(90deg, hsl(var(--background) / .99) 0%, hsl(var(--background) / .98) 42%, hsl(var(--background) / .72) 62%, hsl(var(--background) / .28) 82%, transparent 100%); pointer-events: none; }
+  .hero-grid > div:first-child::before { content: ''; position: absolute; z-index: -1; inset: -80px -270px -80px -80px; background: linear-gradient(90deg, hsl(var(--foreground) / .045) 0%, hsl(var(--foreground) / .03) 38%, transparent 78%), linear-gradient(90deg, hsl(var(--background) / .99) 0%, hsl(var(--background) / .98) 34%, hsl(var(--background) / .82) 55%, hsl(var(--background) / .48) 74%, hsl(var(--background) / .16) 90%, transparent 100%); pointer-events: none; }
   .hero-network-map { position: absolute !important; z-index: 1; top: -30px !important; right: -82px !important; width: 66% !important; height: 610px !important; min-height: 0; border-radius: 0; background: transparent; box-shadow: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .35) 14%, #000 34%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .35) 14%, #000 34%, #000 100%); }
   .hero-network-map .lagos-map-label { top: 76px; right: 86px; left: auto; }
 }

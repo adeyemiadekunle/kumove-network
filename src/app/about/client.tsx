@@ -67,7 +67,7 @@ export default function AboutClient() {
           </div>
 
           {/* Hero Responsive Image */}
-          <div className="group relative my-4 aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 bg-muted shadow-md transition-shadow duration-300 hover:shadow-xl">
+          <div className="group relative my-4 aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 bg-muted shadow-md transition-shadow duration-300 hover:shadow-xl">
             <Image
               src="/images/about-community-africa.png"
               alt="African delivery partners gathered outside a neighborhood shop"

@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Kumove for business',
+  alternates: { canonical: '/business' },
   description:
     'Give customers delivery and collection choices that feel as thoughtful as the products they came for.',
 };
@@ -83,7 +84,7 @@ export default function BusinessPage() {
           </div>
 
           {/* Responsive Feature Image Container */}
-          <div className="group relative my-8 sm:my-10 md:my-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] lg:max-h-[420px] overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 shadow-md transition-shadow duration-300 hover:shadow-xl">
+          <div className="group relative my-8 sm:my-10 md:my-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-auto lg:h-[420px] overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 shadow-md transition-shadow duration-300 hover:shadow-xl">
             <Image
               src="/images/merchant-order-africa.png"
               alt="African business owner preparing a parcel for delivery"

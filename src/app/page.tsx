@@ -15,6 +15,7 @@ import { LagosNetworkMap } from '@/components/site/LagosNetworkMap';
 
 export const metadata: Metadata = {
   title: 'Urban delivery, redrawn',
+  alternates: { canonical: '/' },
   description:
     'Kumove connects businesses, customers, KuCouriers, KuDrivers and KuStops into a smarter city delivery network.',
 };
@@ -95,8 +96,8 @@ export default function HomePage() {
               <em>in motion.</em>
             </h1>
             <p className="hero-copy reveal delay-2">
-              Kumove is a smarter delivery network connecting Nigerian businesses, couriers, drivers and
-              local collection points — so online orders feel local.
+              Kumove is a smarter delivery network for businesses and people, connecting couriers, drivers and
+              local collection points — whether you are sending an order or a parcel to someone you love.
             </p>
             <div className="hero-actions reveal delay-3">
               <Button asChild size="lg" className="rounded-full px-5 py-4 text-sm font-bold shadow-md hover:shadow-lg transition-all" data-testid="button-partner-with-kumove">
