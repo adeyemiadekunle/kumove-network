@@ -5,7 +5,7 @@ import { MapPin, Route as RouteIcon, ShieldCheck } from 'lucide-react';
 import { SiteFrame } from '@/components/site/SiteFrame';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { LagosNetworkMap } from '@/components/site/LagosNetworkMap';
+// import { LagosNetworkMap } from '@/components/site/LagosNetworkMap';
 import {
   Accordion,
   AccordionContent,
@@ -101,7 +101,7 @@ export default function AboutClient() {
           </div>
 
           {/* Principles Banner Image */}
-          <LagosNetworkMap className="about-route-map" />
+          {/* <LagosNetworkMap className="about-route-map" /> */}
 
           {/* Principle Cards leveraging shadcn Card */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
