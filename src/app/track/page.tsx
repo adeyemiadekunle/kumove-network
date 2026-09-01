@@ -3,6 +3,7 @@ import TrackClient from './client';
 
 export const metadata: Metadata = {
   title: 'Track your delivery',
+  alternates: { canonical: '/track' },
   description: 'Follow every Kumove delivery handoff from collection to arrival.',
 };
 

@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Delivery that fits your day',
+  alternates: { canonical: '/customers' },
   description: 'Choose delivery, collection and useful updates through Kumove.',
 };
 
@@ -49,8 +50,8 @@ export default function CustomersPage() {
               Delivery that fits<br /><em>your day.</em>
             </h1>
             <p className="page-copy">
-              Get the parcel without giving up the whole day. Kumove lets you follow the route, choose a trusted
-              collection point and see what is happening next.
+              Send or receive a parcel without giving up the whole day. Kumove lets you send goods to family and
+              friends, follow the route, choose a trusted collection point and see what is happening next.
             </p>
             <div className="hero-actions">
               <Button asChild size="lg" className="rounded-full px-5 py-4 text-sm font-bold shadow-md hover:shadow-lg transition-all" data-testid="button-customer-track">
@@ -88,7 +89,7 @@ export default function CustomersPage() {
           </div>
 
           {/* Responsive Feature Image Container */}
-          <div className="group relative my-8 sm:my-10 md:my-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] lg:max-h-[420px] overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 shadow-md transition-shadow duration-300 hover:shadow-xl">
+          <div className="group relative my-8 sm:my-10 md:my-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-auto lg:h-[420px] overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 shadow-md transition-shadow duration-300 hover:shadow-xl">
             <Image
               src="/images/customer-delivery-africa.png"
               alt="African customer receiving a parcel from a courier"

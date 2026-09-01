@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'KuCourier',
+  alternates: { canonical: '/couriers' },
   description:
     'See the route, the pay and the distance before you accept. Kumove gives independent couriers the visibility and support to turn city time into dependable income.',
 };
@@ -83,7 +84,7 @@ export default function CouriersPage() {
           </div>
 
           {/* Responsive Feature Image Container */}
-          <div className="group relative my-8 sm:my-10 md:my-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] lg:max-h-[420px] overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 shadow-md transition-shadow duration-300 hover:shadow-xl">
+          <div className="group relative my-8 sm:my-10 md:my-12 aspect-[4/3] sm:aspect-[16/9] lg:aspect-auto lg:h-[420px] overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 shadow-md transition-shadow duration-300 hover:shadow-xl">
             <Image
               src="/images/courier-pickup-africa.png"
               alt="African courier receiving a parcel from a local shop"
