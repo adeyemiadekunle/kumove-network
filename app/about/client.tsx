@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronDown, MapPin, Route as RouteIcon, ShieldCheck } from 'lucide-react';
 import { SiteFrame } from '@/components/site/SiteFrame';
@@ -38,6 +39,17 @@ export default function AboutClient() {
             <span className="eyebrow">Kumove / Kunemi</span>
             <h1 id="about-heading" className="page-title">A city that<br /><em>moves together.</em></h1>
           </div>
+          <div className="about-hero-visual">
+            <Image
+              src="/images/about-community-africa.png"
+              alt="African delivery partners gathered outside a neighborhood shop"
+              fill
+              sizes="(max-width: 699px) 100vw, 45vw"
+              className="about-image"
+              priority
+            />
+            <span className="about-image-label">People / Place / Progress</span>
+          </div>
           <p className="page-copy">
             Kumove is the delivery product people experience. Kunemi is the postcode-native operating system
             underneath it — turning addresses into routes, routes into handoffs and handoffs into trust.
@@ -53,6 +65,16 @@ export default function AboutClient() {
               The network starts with the things delivery systems usually treat as details: a canonical address,
               an accountable handoff and the right person with the right scope at the right time.
             </p>
+          </div>
+          <div className="about-principles-visual">
+            <Image
+              src="/images/about-route-africa.png"
+              alt="African courier and shopkeeper sorting parcels at a local collection point"
+              fill
+              sizes="(max-width: 699px) 100vw, 50vw"
+              className="about-image"
+            />
+            <span className="about-image-label">The handoff is the product</span>
           </div>
           <div className="principle-grid">
             <article className="principle-card">
