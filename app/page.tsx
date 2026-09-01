@@ -10,6 +10,10 @@ import {
   Store,
 } from 'lucide-react';
 import Link from 'next/link';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { LagosNetworkMap } from '@/components/site/LagosNetworkMap';
 
 export const metadata: Metadata = {
   title: 'Urban delivery, redrawn',
@@ -19,23 +23,7 @@ export const metadata: Metadata = {
 
 function NetworkVisual() {
   return (
-    <div className="network-visual" aria-label="Illustrated Kumove city delivery network">
-      <span className="network-label">Live city network / 04</span>
-      <span className="map-line one" />
-      <span className="map-line two" />
-      <span className="map-line three" />
-      <span className="map-line four" />
-      <span className="map-stop stop-a" />
-      <span className="map-stop stop-b" />
-      <span className="map-stop stop-c" />
-      <span className="map-stop stop-d" />
-      <span className="moving-dot" />
-      <div className="network-card">
-        <small>Route health</small>
-        <strong>Moving well</strong>
-        <span>+ 12.4% this week</span>
-      </div>
-    </div>
+    <LagosNetworkMap className="hero-network-map" />
   );
 }
 
@@ -57,6 +45,45 @@ function Ticker() {
   );
 }
 
+const services = [
+  {
+    href: '/business',
+    icon: Store,
+    kicker: 'Kumove for business',
+    title: 'Turn checkout into a local advantage.',
+    desc: 'Give customers delivery and collection choices that fit the way they actually live.',
+    featured: true,
+  },
+  {
+    href: '/couriers',
+    icon: PackageCheck,
+    kicker: 'KuCourier',
+    title: 'Earn with a clearer route.',
+    desc: 'See the work before you accept it and keep control of your time.',
+  },
+  {
+    href: '/kudrivers',
+    icon: RouteIcon,
+    kicker: 'KuDriver',
+    title: 'Make every mile count.',
+    desc: 'Move consolidated capacity between the nodes that keep the city moving.',
+  },
+  {
+    href: '/kustops',
+    icon: MapPin,
+    kicker: 'KuStops',
+    title: 'Put your corner of the city to work.',
+    desc: 'Become a trusted collection point for the people already passing by.',
+  },
+  {
+    href: '/track',
+    icon: ShieldCheck,
+    kicker: 'For customers',
+    title: 'Know what is next.',
+    desc: 'Track a delivery through every handoff, from address to arrival.',
+  },
+];
+
 export default function HomePage() {
   return (
     <SiteFrame>
@@ -70,26 +97,37 @@ export default function HomePage() {
               <em>in motion.</em>
             </h1>
             <p className="hero-copy reveal delay-2">
-              Kumove is the delivery network that makes online orders feel local — pairing brilliant
-               businesses with trusted people, smarter routes and the places you already know.
+              Kumove is a smarter delivery network connecting Nigerian businesses, couriers, drivers and
+              local collection points — so online orders feel local.
             </p>
             <div className="hero-actions reveal delay-3">
-              <Link className="button-primary" href="/business" data-testid="button-partner-with-kumove">
-                For business <ArrowDownRight size={16} />
-              </Link>
-              <Link className="button-quiet" href="/about" data-testid="button-see-the-route">
-                See the route
-              </Link>
+              <Button asChild size="lg" className="rounded-full px-5 py-4 text-sm font-bold shadow-md hover:shadow-lg transition-all" data-testid="button-partner-with-kumove">
+                <Link href="/business">
+                  Partner with Kumove <ArrowDownRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full px-5 py-4 text-sm font-bold transition-all" data-testid="button-see-the-route">
+                <Link href="/about">
+                  See the route
+                </Link>
+              </Button>
             </div>
             <div className="hero-note">
               <span className="pulse" />
-              Built for the rhythm of real neighborhoods
+              Built for the rhythm of Nigerian neighborhoods
+            </div>
+            <div className="hero-proof" aria-label="Kumove launch information">
+              <span>Postcode-aware</span>
+              <span>Local-first</span>
+              <span>Built for Nigeria</span>
             </div>
           </div>
           <NetworkVisual />
         </div>
       </section>
+
       <Ticker />
+
       <section className="section section-tinted" aria-labelledby="network-heading">
         <div className="container-wide">
           <div className="section-heading">
@@ -103,9 +141,20 @@ export default function HomePage() {
           <div className="network-story">
             <div className="story-quote">"Fast is good. Useful is better."</div>
             <p className="story-aside">
-               A business, a KuCourier, a KuDriver and a KuStop each see a different part of
+              A business, a KuCourier, a KuDriver and a KuStop each see a different part of
               the route. Kumove brings them into focus, so every handoff feels simple, visible and worth making.
             </p>
+          </div>
+          <div className="how-it-works" aria-labelledby="how-it-works-heading">
+            <div>
+              <span className="section-index">How it works</span>
+              <h3 id="how-it-works-heading">One parcel. A clearer path.</h3>
+            </div>
+            <div className="route-steps">
+              <div className="route-step"><span>01</span><strong>Start with the address</strong><p>Postcode-aware details make the destination useful from the beginning.</p></div>
+              <div className="route-step"><span>02</span><strong>Move through the network</strong><p>Trusted people and local nodes share the work of getting it there.</p></div>
+              <div className="route-step"><span>03</span><strong>Arrive with confidence</strong><p>Customers get a clear delivery or collection experience.</p></div>
+            </div>
           </div>
           <div className="stat-band">
             <div className="stat"><strong>01</strong><span>address-first by design</span></div>
@@ -115,6 +164,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       <section className="section" aria-labelledby="products-heading">
         <div className="container-wide">
           <div className="section-heading">
@@ -125,52 +175,23 @@ export default function HomePage() {
               who move parcels, and the people waiting for them.
             </p>
           </div>
+
+          {/* Service Cards Grid with shadcn Card */}
           <div className="service-grid">
-            <Link className="service-card featured" href="/business">
-              <div>
-                <span className="service-icon"><Store size={20} /></span>
-                <div className="service-kicker">Kumove for business</div>
-                <h3>Turn checkout into a local advantage.</h3>
-                <p>Give customers delivery and collection choices that fit the way they actually live.</p>
-              </div>
-              <span className="service-arrow"><ArrowRight size={17} /></span>
-            </Link>
-            <Link className="service-card" href="/couriers">
-              <div>
-                <span className="service-icon"><PackageCheck size={20} /></span>
-                <div className="service-kicker">KuCourier</div>
-                <h3>Earn with a clearer route.</h3>
-                <p>See the work before you accept it and keep control of your time.</p>
-              </div>
-              <span className="service-arrow"><ArrowRight size={17} /></span>
-            </Link>
-            <Link className="service-card" href="/drivers">
-              <div>
-                <span className="service-icon"><RouteIcon size={20} /></span>
-                <div className="service-kicker">KuDriver</div>
-                <h3>Make every mile count.</h3>
-                <p>Move consolidated capacity between the nodes that keep the city moving.</p>
-              </div>
-              <span className="service-arrow"><ArrowRight size={17} /></span>
-            </Link>
-            <Link className="service-card" href="/pitstops">
-              <div>
-                <span className="service-icon"><MapPin size={20} /></span>
-                <div className="service-kicker">KuStops</div>
-                <h3>Put your corner of the city to work.</h3>
-                <p>Become a trusted collection point for the people already passing by.</p>
-              </div>
-              <span className="service-arrow"><ArrowRight size={17} /></span>
-            </Link>
-            <Link className="service-card" href="/track">
-              <div>
-                <span className="service-icon"><ShieldCheck size={20} /></span>
-                <div className="service-kicker">For customers</div>
-                <h3>Know what is next.</h3>
-                <p>Track a delivery through every handoff, from address to arrival.</p>
-              </div>
-              <span className="service-arrow"><ArrowRight size={17} /></span>
-            </Link>
+            {services.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link key={item.href} href={item.href} className={`service-card ${item.featured ? 'featured' : ''}`}>
+                  <div>
+                    <span className="service-icon"><Icon size={20} /></span>
+                    <div className="service-kicker">{item.kicker}</div>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
+                  <span className="service-arrow"><ArrowRight size={17} /></span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

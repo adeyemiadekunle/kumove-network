@@ -3,6 +3,10 @@
 import { type FormEvent, useState } from 'react';
 import { ArrowRight, Check, CircleHelp } from 'lucide-react';
 import { SiteFrame } from '@/components/site/SiteFrame';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 export default function TrackClient() {
   const [code, setCode] = useState('');
@@ -44,58 +48,91 @@ export default function TrackClient() {
               ].map(([title, copy], index) => (
                 <div className={`status-step ${index === 0 ? 'active' : ''}`} key={title}>
                   <span className="status-marker">{index === 0 ? <Check size={15} /> : index + 1}</span>
-                  <div><h4>{title}</h4><p>{copy}</p></div>
+                  <div>
+                    <h4>{title}</h4>
+                    <p>{copy}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="track-form-card">
-            <h2>Find your delivery</h2>
-            <p>Use the code from your order confirmation. It usually starts with KM.</p>
-            {status === 'success' ? (
-              <div className="track-success" role="status" data-testid="status-track-success">
-                <Check size={19} />
-                <div>
-                  <strong>Your delivery is moving.</strong>
-                  <br />
-                  We found <span className="font-mono-brand">{code.toUpperCase()}</span>. The latest route update is on its way to your inbox.
+
+          {/* shadcn Card for Track Form */}
+          <Card className="relative z-10 w-full max-w-[440px] justify-self-end rounded-3xl border border-border/80 bg-card p-6 sm:p-8 text-foreground shadow-xl">
+            <CardHeader className="p-0 pb-6">
+              <CardTitle className="font-display text-2xl sm:text-3xl tracking-tight text-foreground">
+                Find your delivery
+              </CardTitle>
+              <CardDescription className="text-sm text-muted-foreground pt-1">
+                Preview the Kumove tracking experience with a delivery code. It usually starts with KM.
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className="p-0">
+              {status === 'success' ? (
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 rounded-2xl bg-accent/40 p-4 text-sm text-accent-foreground" role="status" data-testid="status-track-success">
+                    <Check className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block font-semibold">Your delivery is moving.</strong>
+                      <span className="text-muted-foreground">
+                        We found <span className="font-mono-brand font-bold text-foreground">{code.toUpperCase()}</span>. This preview shows how a useful route update will appear.
+                      </span>
+                    </div>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full rounded-full py-6 font-semibold"
+                    onClick={() => { setStatus('idle'); setCode(''); }}
+                    data-testid="button-track-another"
+                  >
+                    Track another delivery
+                  </Button>
                 </div>
+              ) : (
+                <form onSubmit={submit} className="space-y-4">
+                  <div>
+                    <label htmlFor="tracking-code" className="form-label mb-2 block text-xs font-mono-brand tracking-widest text-muted-foreground uppercase">
+                      Delivery code
+                    </label>
+                    <Input
+                      id="tracking-code"
+                      className="h-12 rounded-xl font-mono-brand uppercase text-base tracking-wider bg-background border-border/80 focus-visible:ring-secondary"
+                      value={code}
+                      onChange={(event) => { setCode(event.target.value); setError(''); }}
+                      placeholder="e.g. KM-7Q4N2"
+                      autoComplete="off"
+                      data-testid="input-tracking-code"
+                    />
+                    {error && (
+                      <p className="form-error mt-2 text-xs font-medium text-destructive" role="alert" data-testid="status-track-error">
+                        {error}
+                      </p>
+                    )}
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full rounded-full py-6 text-sm font-bold shadow-md hover:shadow-lg transition-all"
+                    data-testid="button-submit-tracking"
+                  >
+                    Show my delivery <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </form>
+              )}
+
+              <div className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
+                <CircleHelp className="h-3.5 w-3.5" />
+                <span>Need a hand?</span>
+                <a href="mailto:hello@kumove.city" className="font-semibold text-foreground underline hover:text-secondary">
+                  Contact support
+                </a>
               </div>
-            ) : (
-              <form onSubmit={submit}>
-                <label htmlFor="tracking-code" className="form-label">Delivery code</label>
-                <input
-                  id="tracking-code"
-                  className="track-input"
-                  value={code}
-                  onChange={(event) => { setCode(event.target.value); setError(''); }}
-                  placeholder="e.g. KM-7Q4N2"
-                  autoComplete="off"
-                  data-testid="input-tracking-code"
-                />
-                {error && <p className="form-error" role="alert" data-testid="status-track-error">{error}</p>}
-                <button className="button-primary track-submit" type="submit" data-testid="button-submit-tracking">
-                  Show my delivery <ArrowRight size={16} />
-                </button>
-              </form>
-            )}
-            {status === 'success' && (
-              <button
-                className="button-quiet"
-                type="button"
-                style={{ width: '100%', marginTop: 11 }}
-                onClick={() => { setStatus('idle'); setCode(''); }}
-                data-testid="button-track-another"
-              >
-                Track another delivery
-              </button>
-            )}
-            <div className="support-line">
-              <CircleHelp size={14} /> Need a hand? <a href="mailto:hello@kumove.city">Contact support</a>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
+
       <section className="section section-tinted">
         <div className="container-wide feature-band">
           <div>
