@@ -80,7 +80,7 @@ Only use a browser-safe public token here. The map is visual storytelling, not a
 
 ## Project shape
 
-- `app/` — Routes, page content and global styles.
+- `src/app/` — App Router routes, page content, providers and global styles.
 - `src/components/site/` — Shared site shell, navigation, footer and network visual.
 - `src/components/ui/` — Reusable interface primitives.
 - `public/images/` — Marketing imagery used across audience pages.

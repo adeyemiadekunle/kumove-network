@@ -181,8 +181,9 @@
 .lagos-map-fallback span { color: hsl(var(--accent)); font: 10px var(--app-font-mono); letter-spacing: .12em; text-transform: uppercase; }
 .lagos-map-fallback strong { max-width: 290px; font: 600 20px/1.15 var(--app-font-serif); }
 .lagos-map-stop, .lagos-map-moving { width: 14px; height: 14px; border: 3px solid hsl(var(--primary)); border-radius: 50%; background: hsl(var(--accent)); box-shadow: 0 0 0 4px hsl(var(--accent) / .25); }
-.lagos-map-moving { width: 10px; height: 10px; border-width: 2px; background: hsl(var(--secondary)); box-shadow: 0 0 0 5px hsl(var(--secondary) / .22); }
-.about-route-map { min-height: 360px; margin: 32px 0 40px; }
+.lagos-map .mapboxgl-marker { z-index: 3; }
+.lagos-map-moving { width: 14px; height: 14px; border-width: 3px; background: hsl(var(--secondary)); box-shadow: 0 0 0 5px hsl(var(--secondary) / .3); animation: map-pulse 1.4s ease-in-out infinite; }
+.about-route-map { height: 420px; min-height: 0; margin: 32px 0 40px; }
 .network-route-key { position: absolute; z-index: 4; left: 20px; right: 20px; top: 64px; display: flex; align-items: center; justify-content: center; gap: 8px; color: hsl(var(--primary-foreground) / .8); font: 9px var(--app-font-mono); letter-spacing: .05em; text-transform: uppercase; }
 .network-route-key span { padding: 6px 8px; border: 1px solid hsl(var(--primary-foreground) / .18); border-radius: 999px; background: hsl(var(--primary) / .5); }
 .network-route-key i { color: hsl(var(--accent)); font-style: normal; }
@@ -379,6 +380,7 @@
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes shimmer { from { background-position: -200% center; } to { background-position: 200% center; } }
+@keyframes map-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
 
 .opportunity-panel { animation: float 7s ease-in-out infinite; }
 
@@ -407,15 +409,20 @@
   .desktop-nav { display: flex; }
   .menu-button, .mobile-menu { display: none; }
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .hero-grid { position: relative; display: block; min-height: 570px; }
   .hero-grid > div:first-child { position: relative; z-index: 2; width: 56%; padding-top: 88px; }
-  .hero-grid > div:first-child::before { content: ''; position: absolute; z-index: -1; inset: -80px -170px -80px -80px; background: radial-gradient(ellipse at 42% 50%, hsl(var(--background) / .99) 0%, hsl(var(--background) / .92) 46%, hsl(var(--background) / .5) 68%, transparent 82%); filter: drop-shadow(0 20px 34px hsl(var(--primary) / .12)); pointer-events: none; }
-  .hero-network-map { position: absolute !important; z-index: 1; top: -56px !important; right: -40px !important; width: 68% !important; height: 650px !important; min-height: 0; border-radius: 0; background: transparent; box-shadow: none; }
-  .hero-network-map::after { content: ''; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, hsl(var(--background) / .98) 0%, hsl(var(--background) / .82) 13%, hsl(var(--background) / .32) 35%, transparent 62%), linear-gradient(180deg, hsl(var(--background) / .14), transparent 22%, transparent 76%, hsl(var(--background) / .24)); }
-  .hero-network-map .lagos-map-label { top: 76px; right: 54px; left: auto; }
+  .hero-grid > div:first-child::before { content: ''; position: absolute; z-index: -1; inset: -80px -220px -80px -80px; background: linear-gradient(90deg, hsl(var(--background) / .99) 0%, hsl(var(--background) / .98) 42%, hsl(var(--background) / .72) 62%, hsl(var(--background) / .28) 82%, transparent 100%); pointer-events: none; }
+  .hero-network-map { position: absolute !important; z-index: 1; top: -30px !important; right: -82px !important; width: 66% !important; height: 610px !important; min-height: 0; border-radius: 0; background: transparent; box-shadow: none; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .35) 14%, #000 34%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .35) 14%, #000 34%, #000 100%); }
+  .hero-network-map .lagos-map-label { top: 76px; right: 86px; left: auto; }
+}
+@media (min-width: 700px) and (max-width: 1023px) {
+  .hero-network-map { min-height: 0; height: 400px; }
+  .about-route-map { height: 400px; }
 }
 @media (max-width: 699px) {
+  .hero-network-map { min-height: 0; height: 320px; }
+  .about-route-map { height: 320px; }
   .network-route-key { left: 14px; right: 14px; gap: 4px; font-size: 7px; }
   .network-route-key span { padding: 5px; }
   .track-section .page-title { max-width: 100%; font-size: clamp(38px, 11vw, 68px); word-break: break-word; }

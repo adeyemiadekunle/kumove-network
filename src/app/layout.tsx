@@ -1,14 +1,14 @@
-import type { Metadata } from 'next';
-import { QueryClientProviders } from './providers';
-import './globals.css';
+import type { Metadata } from "next";
+import { QueryClientProviders } from "./providers";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Kumove',
-    template: '%s | Kumove',
+    default: "Kumove",
+    template: "%s | Kumove",
   },
   description:
-    'Kumove connects businesses, customers, KuCouriers, KuDrivers and KuStops into a smarter city delivery network.',
+    "Kumove connects businesses, customers, KuCouriers, KuDrivers and KuStops into a smarter city delivery network.",
 };
 
 export default function RootLayout({
