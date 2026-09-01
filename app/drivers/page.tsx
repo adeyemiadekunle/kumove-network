@@ -7,6 +7,7 @@ import {
   Route as RouteIcon,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'KuDriver',
@@ -44,6 +45,9 @@ export default function DriversPage() {
             <span className="section-index">01 / KuDriver capacity</span>
             <h2>The route is your working capital.</h2>
             <p>Kunemi matches available capacity to the shipments, nodes and corridors that make operational sense — so your vehicle works harder without the day becoming chaotic.</p>
+          </div>
+          <div className="audience-feature-image relative mb-10 aspect-[4/3] overflow-hidden rounded-[2rem] md:aspect-[16/7]">
+            <Image src="/images/driver-loading-africa.png" alt="African driver loading parcels into a delivery van" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">
             <article className="benefit-card">

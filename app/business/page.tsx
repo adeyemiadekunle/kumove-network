@@ -7,6 +7,7 @@ import {
   Store,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Kumove for business',
@@ -44,6 +45,9 @@ export default function BusinessPage() {
             <span className="section-index">01 / Business movement</span>
             <h2>Less chasing. More sending.</h2>
             <p>Kumove gives business teams a clean operating layer for bulk shipments, tracking, returns and the decisions that keep customers close.</p>
+          </div>
+          <div className="audience-feature-image relative mb-10 aspect-[4/3] overflow-hidden rounded-[2rem] md:aspect-[16/7]">
+            <Image src="/images/merchant-order-africa.png" alt="African business owner preparing a parcel for delivery" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover" />
           </div>
           <div className="benefit-grid">
             <article className="benefit-card">
